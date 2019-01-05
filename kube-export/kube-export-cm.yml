@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-export-cm
+  labels:
+    name: kube-export-cm
+  namespace: prod 
+data:
+  export.conf : |
+       module=deploy,svc,daemonset
+       namespaces=all
+       keepbackup(days)=2
+       minutes=720
