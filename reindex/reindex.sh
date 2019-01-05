@@ -2,7 +2,7 @@
 ip_db_stg=172.16.90.80
 ip_db_prod=172.16.90.82
 user=app
-export PGPASSWORD="abcd/1234"
+export PGPASSWORD=""
 TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
 
 stime=`date +%m`
