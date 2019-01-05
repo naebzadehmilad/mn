@@ -1,0 +1,16 @@
+FROM centos:7
+MAINTAINER Miladnaebzadeh
+RUN rpm -ivh   http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm && \
+    yum install -y  \
+    kubernetes  \
+    curl \
+    network-utils \
+    htop \
+    zip   \
+    unzip  \
+    htop    \
+RUN mkdir  /opt/save &&  mkdir /config   &&  mkdir  /opt/export && mkdir /ca             \
+ADD export.sh /opt
+COPY export.conf /opt
+WORKDIR /opt
+ENTRYPOINT  /opt/export.sh
